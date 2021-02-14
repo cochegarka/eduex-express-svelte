@@ -83,7 +83,7 @@
 
     function sendData() {
         fetch(mode === 'create' ? 'http://localhost:3000/create' : `http://localhost:3000/update/${id}`, {
-            method: 'PUT',
+            method: mode === 'create' ? 'POST' : 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
